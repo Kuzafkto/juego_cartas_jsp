@@ -1,0 +1,14 @@
+body{
+    background-image: url(../img/textura.jpg);
+}
+
+.cartas{
+    padding:50px;
+    display:flex;
+    justify-content:center;
+    
+}
+
+.carta{
+    padding:10px;
+}
