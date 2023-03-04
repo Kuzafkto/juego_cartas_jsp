@@ -32,12 +32,8 @@ public class Carta{
         return Carta.palos[(int)(this.codigo/10)];
     }
 
-    String getNumeroAsString(){
+public String getNumeroAsString(){
         return Carta.numerosYFiguras[(int)(this.codigo%10)];
-    }
-
-    public int getNumeroAsInt(){
-        return (int)(this.codigo%10);
     }
     @Override
 public boolean equals(Object card){

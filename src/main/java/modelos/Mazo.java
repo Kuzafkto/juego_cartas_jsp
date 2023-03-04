@@ -3,14 +3,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 public class Mazo {
     private ArrayList<Carta> mazo;
-    private ArrayList<Carta> descarte;
     public Mazo(){
         this.init();
         this.barajar();
     }
 
     private void init(){
-        descarte = new ArrayList<Carta>();
         mazo = new ArrayList<Carta>();
         for(int i = 0; i < 40;i++)
             mazo.add(new Carta(i));
@@ -22,7 +20,6 @@ public class Mazo {
     }
 
     public Carta extrae(){
-        descarte.add(mazo.get(0));
         return mazo.remove(0);
     }
 
