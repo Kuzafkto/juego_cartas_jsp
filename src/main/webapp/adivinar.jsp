@@ -67,7 +67,7 @@
         </div>
             <div id="guessImg">
                 <img src="assets/img/gnomeSam.png">
-                <span>El tio GnomeSam necesita<br>que llegues al final del arcoiris</span>
+                <span>El tio GnomeSam necesita<br>que llegues al final del arcoíris</span>
             </div>
     </div>
         <div class="submitButton">

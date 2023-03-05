@@ -8,6 +8,6 @@ public class CartaTemplate {
 
     @Override
     public String toString(){
-        return String.format("<div class=\"carta\"><img src=\"assets/img/%02d.png\"></div>", this.carta.getCodigo()+1);
+        return String.format("<img src=\"assets/img/%02d.png\">", this.carta.getCodigo()+1);
     }
 }

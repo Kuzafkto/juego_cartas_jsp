@@ -13,13 +13,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
-    border: 1px solid yellow;
 }
 /*BY DEFAULT*/
+
+
+/******************************************PANTALLA DE REGLAS*****************************************/
+.bodyRules{
+    background-image: url(../img/papyrus.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.rulesBlock{
+    width:100%;
+    height:100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    word-wrap: break-word;
+
+}
+
+.rulesBlock p{
+    font-family: 'Squada One', cursive;
+    text-align: justify;
+    padding: 3%;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+.rulesBlock .submitButton input {
+    color: white;
+    background-color: black;
+}
+/******************************************PANTALLA DE REGLAS*****************************************/
+
+
 
 /******************************************PANTALLA DE APOSTAR*****************************************/
 
@@ -86,6 +121,7 @@
     align-items: center;
     height: 100%;
     border-radius: 10px;
+    background-color: white;
 }
 
 .betImg img{
@@ -96,13 +132,14 @@
 }
 
 .betImg p{
-    width: 63%;
     text-align: center;
-    height: 20%;
+    height: 15%;
     display: flex;
     flex-direction: column;
     font-family: 'Raleway', sans-serif;
     background-color: white;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 .betP1{
@@ -147,6 +184,16 @@
     font-size: 1.6rem;
     font-family: 'Knewave', cursive;
 }
+
+.rulesButton{
+    display: flex;
+    flex-direction: row;
+}
+.rulesButton form input{
+    height: fit-content;
+    align-self: flex-end;
+}
+
 /*betform*/
 
 .betBlock .submitButton input{
@@ -165,44 +212,6 @@
 }
 /******************************************PANTALLA DE APOSTAR*****************************************/
 
-
-/******************************************PANTALLA DE PARTIDA*****************************************/
-
-.bodyGame{
-    background-image: url(../img/gameBackground2.png);
-    background-repeat: no-repeat;
-    background-size:cover;
-}
-.cartas{
-    padding:50px;
-    display:flex;
-    justify-content:center;
-}
-
-.gameBlock{
-    width:100%;
-    height:100vh;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.gameTitle{
-    display: flex;
-    flex-direction:row;
-    justify-content: center;
-    align-items: center;
-    font-size: 4.5rem;
-    font-weight: bold;
-    font-family: 'Slackey', cursive;
-    text-shadow: 0 0 7px black;
-    color: white;
-}
-.carta{
-    padding:10px;
-}
-/******************************************PANTALLA DE PARTIDA*****************************************/
 
 
 /******************************************PANTALLA DE ADIVINAR*****************************************/
@@ -264,7 +273,7 @@
     flex-direction:row;
     justify-content: center;
     align-items: center;
-    font-size: 4.5rem;
+    font-size: 4rem;
     font-weight: bold;
     font-family: 'Henny Penny', cursive;
     text-shadow: 0 0 7px whitesmoke;
@@ -281,10 +290,11 @@
 #guessOptions{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     height: 80%;
     padding-left: 20px;
+    align-self: flex-start;
 }
 
 #guessOptions form{
@@ -308,7 +318,7 @@
     flex-direction: column;
     justify-content: space-around;
     font-family: 'Skranji', cursive;
-    font-size: 8vh;
+    font-size: 5vh;
     color: white;
     text-shadow: 0 0 10px black;
     padding-right: 17px;
@@ -319,8 +329,11 @@
     text-align: center;
     font-family: 'Knewave', cursive;
     background-color: limegreen;
-    font-size: 2.2rem;
-    border-radius: 20%;
+    font-size: 1.5rem;
+    border-radius: 15px;
+}
+*:disabled{
+background-color: darkgrey;
 }
 
 
@@ -334,11 +347,12 @@
 }
 
 #guessImg img{
-    height: 80%;
+    height: 100%;
+    width: 100%;
 }
 
 #guessImg span{
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: 'Knewave', cursive;
     color: azure;
     text-shadow: 0 0 10px black;
@@ -369,3 +383,307 @@
     padding: 10px;
 }
 /******************************************PANTALLA DE ADIVINAR*****************************************/
+
+
+/******************************************PANTALLA DE PARTIDA*****************************************/
+
+.bodyGame{
+    background-image: url(../img/gameBackground2.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.cartas{
+    padding:50px;
+    display:flex;
+    justify-content:space-evenly;
+}
+
+.gameBlock{
+    width:100%;
+    height:100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.gameTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    font-weight: bold;
+    text-shadow: 0 0 7px black;
+    color: white;
+    font-family: 'Tilt Warp', cursive;
+    text-align: center;
+}
+
+.gameSubtitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 4.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 7px black;
+    color: white;
+    font-family: 'Tilt Warp', cursive;
+}
+.carta{
+    padding:10px;
+}
+.gameBlock .submitButton input{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    text-align: center;
+    font-family: 'Knewave', cursive;
+    background-color: darkred;
+    font-size: 3rem;
+    border-radius: 50px;
+    justify-content: center;
+    height: 100%;
+    padding: 10px;
+    text-shadow: 0 0 5px whitesmoke;
+}
+/******************************************PANTALLA DE PARTIDA*****************************************/
+/******************************************PANTALLA FINAL*****************************************/
+.finalBlock{
+    width:100%;
+    height:100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.finalBlock .gameTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 0 0 7px black;
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+}
+
+.finalBlock .gameTitle2 .gameTitle{
+    font-size: 4rem;
+}
+.finalImg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 47%;
+}
+
+.finalImg img{
+    height: 100%;
+}
+
+.finalBlock .submitButton input{
+    background-color: goldenrod;
+    font-size: 3rem;
+    width: 45vh;
+    color: white;
+    text-shadow: 0 0 5px white;
+}
+
+/******************************************PANTALLA FINAL*****************************************/
+
+
+/******************************************PANTALLA MEDIA QUERIES*****************************************/
+
+@media only screen and (width>=300px)and (width<=500px){
+
+/*Rules*/
+
+.rulesBlock p{
+   font-size: 0.5rem;
+}
+
+    /*Betting*/
+.betTitle{
+    font-size: 2rem;
+}
+
+.life img,.money img {
+    height: 20px;
+}
+.life span,.money span {
+font-size: 15px;
+}
+    .betMenu{
+        height: 50%;
+    }
+    .betMenu span {
+        font-size: 1rem;
+    }
+
+    .betImg img {
+        height: 70%;
+        width: 100%;
+    }
+
+    .betImg p {
+        width: 100%;
+        height: 15%;
+    }
+
+    .betP1 {
+    font-size: 0.8rem;
+    }
+    .betP2 {
+        font-size: 0.5rem;
+    }
+
+    .betForm input {
+        height: 2rem;
+        width: 40%;
+        font-size: 0.8rem;
+    }
+
+    .betBlock .submitButton input{
+        font-size: 0.8rem;
+        width: 30vh;
+    }
+
+    /*Guessing*/
+
+    .title{
+        font-size: 1.2rem;
+    }
+
+    #guessImg span {
+        font-size: 0.5rem;
+    }
+
+    #guessOptions .item-input select {
+        font-size: 1rem;
+    }
+
+    #guessOptions .item-input label {
+        font-size: 1rem;
+    }
+
+    .submitButton input {   
+        font-size: 1rem;
+        padding: 5px;
+    }
+    #guessOptions {
+        justify-content: flex-start;
+    }
+
+    /*Final Screen*/
+
+    .finalBlock .gameTitle {
+        font-size: 0.8rem;
+    }
+
+    .finalBlock .gameTitle2 .gameTitle {
+        font-size: 0.8rem;
+    }
+
+    .finalBlock .submitButton input {
+        font-size: 1rem;
+    }
+    /*Final Screen*/
+}
+
+@media only screen and (width>=500px)and (width<=959px){
+
+    /*rules*/
+    .rulesBlock p{
+    padding: 5%;
+    font-size: 0.85rem;  
+    }
+
+    /*Betting*/
+    .betTitle{
+        font-size: 3rem;
+    }
+    
+    .life img,.money img {
+        height: 30px;
+    }
+    .life span,.money span {
+        font-size: 25px;
+    }
+    
+        .betMenu span {
+            font-size: 1.5rem;
+        }
+    
+        .betForm input {
+            height: 3rem;
+            font-size: 1rem;
+            width: 40%;
+        }
+    
+        .betImg img {
+            height: 70%;
+            width: 100%;    
+        }
+    
+        .betImg p {
+            width: 100%;
+            height: 15%;
+        }
+    
+        .betP1 {
+        font-size: 1.5rem;
+        }
+        .betP2 {
+            font-size: 1rem;
+        }
+    
+
+        .betBlock .submitButton input{
+            font-size: 1rem;
+        }
+
+        /*Guessing*/
+
+        .title{
+            font-size: 1.5rem;
+        }
+
+        #guessOptions .item-input label{
+            font-size: 6vh;
+        }
+        #guessOptions .item-input select {
+            font-size: 1.2rem;
+        }
+
+        #guessImg img{
+            height: 90%;
+        }
+        #guessImg span {
+            font-size: 0.9rem;
+        }
+
+        .submitButton input {
+            font-size: 2.5rem;
+        }
+
+        /*Final Screen*/
+        .finalBlock .gameTitle {
+            font-size: 2rem;
+        }
+    
+        .finalBlock .gameTitle2 .gameTitle {
+            font-size: 2rem;
+        }
+
+        .finalBlock .submitButton input {
+            font-size: 2rem;
+        }
+        /*Final Screen*/
+}
+
+/******************************************PANTALLA MEDIA QUERIES*****************************************/

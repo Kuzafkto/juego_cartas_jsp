@@ -8,6 +8,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+        <title>Partida</title>
     </head>
     <body class="bodyGame">
     <%
@@ -19,7 +20,7 @@
            Carta guess= new Carta(Integer.parseInt(request.getParameter("numero")),request.getParameter("palo"));
            if (card.equals(guess)){
                if(card.getNumeroAsString().equals("Sota")){
-                   life+=1;
+                   life+=2;
                    session.setAttribute("life",life);
                }else if(card.getNumeroAsString().equals("Caballo")){
                    bet*=2;
@@ -52,26 +53,31 @@
         </header>
     <%
             if (card.equals(guess)){
-                out.print("<div class=\"gameTitle\">Has acertado</div>");
+                out.print("<div class=\"gameTitle\">ACERTASTE</div>");
                 if(card.getNumeroAsString().equals("Sota")){
-                    out.print("<div class=\"gameTitle\">Has ganado 1 vida</div>");
+                    out.print("<div class=\"gameSubtitle\">Has ganado 1 vida</div>");
                 }else if(card.getNumeroAsString().equals("Caballo")){
-                    out.print("<div class=\"gameTitle\">Has ganado "+ bet2 +"€</div>");
+                    out.print("<div class=\"gameSubtitle\">Has ganado "+ bet2 +"€</div>");
                 }
             }else{
-                out.print("<div class=\"gameTitle\">Has fallado</div>");
+                out.print("<div class=\"gameTitle\">FALLASTE</div>");
                 if(card.getNumeroAsString().equals("Rey")){
-                    out.print("<div class=\"gameTitle\">Has perdido 2 vidas</div>");
+                    out.print("<div class=\"gameSubtitle\">Has perdido 2 vidas</div>");
                 }else if(card.getNumeroAsString().equals("Caballo")){
-                    out.print("<div class=\"gameTitle\">Has perdido "+ bet2/2 +"€</div>");
+                    out.print("<div class=\"gameSubtitle\">Has perdido "+ bet2/2 +"€</div>");
                 }
             }
-            out.print(new CartaTemplate(card));
+    %>
+    <div class="cartas">
+        <%
+        out.print(new CartaTemplate(card));
         %>
-     
+        <img src="./assets/img/reverso.png">
+    </div>
+      
         <div class="submitButton">
             <%if(mazo.size()==0){%>
-            <form method="post" action="final.jsp?victory=1&bet=<%=bet%>">
+            <form method="post" action="final.jsp?victory=1&bet=<%=bet*2%>">
                 <input type="submit" value="Siguiente carta">
             </form>
             <%}else if(life<=0){%>
